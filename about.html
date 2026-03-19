@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vern — Smart Family Assistant</title>
+    <meta name="description" content="Vern is a private, AI-powered family assistant that runs on your own hardware. Scheduling, meal planning, finances, and more — all through natural conversation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --surface-raised: #22253a;
+            --border: #2a2d3a;
+            --text: #e4e6ed;
+            --text-muted: #8b8fa3;
+            --accent: #6c8cff;
+            --accent-soft: #a78bfa;
+            --accent-glow: rgba(108, 140, 255, 0.15);
+            --accent-gradient: linear-gradient(135deg, #6c8cff, #a78bfa);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh;
+        }
+        header {
+            border-bottom: 1px solid var(--border); padding: 1.5rem 2rem;
+            display: flex; align-items: center; gap: 0.75rem; background: var(--surface);
+        }
+        header .logo {
+            font-size: 1.5rem; font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        header nav { margin-left: auto; display: flex; gap: 1.5rem; }
+        header nav a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.9rem;
+            font-weight: 500; transition: color 0.2s;
+        }
+        header nav a:hover, header nav a.active { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            text-align: center; padding: 5rem 2rem 4rem;
+            background: radial-gradient(ellipse at 50% 0%, rgba(108, 140, 255, 0.08) 0%, transparent 70%);
+        }
+        .hero-badge {
+            display: inline-block; background: var(--accent-glow); border: 1px solid var(--border);
+            border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.8rem; font-weight: 600;
+            color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 0.05em;
+        }
+        .hero h1 {
+            font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, #e4e6ed 30%, #a78bfa 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;
+        }
+
+        /* Features */
+        main { max-width: 900px; margin: 0 auto; padding: 0 2rem 5rem; }
+        .section-title {
+            font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; text-align: center;
+            color: var(--text);
+        }
+        .features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem; margin-bottom: 4rem;
+        }
+        .feature {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.5rem; transition: border-color 0.2s;
+        }
+        .feature:hover { border-color: var(--accent); }
+        .feature .icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+        .feature h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .feature p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+        /* Principles */
+        .principles {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem; margin-bottom: 4rem;
+        }
+        .principle {
+            background: var(--accent-glow); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.25rem; text-align: center;
+        }
+        .principle .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .principle h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
+        .principle p { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 3rem 2rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; margin-bottom: 3rem;
+        }
+        .cta-section h2 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+        .cta-section p { color: var(--text-muted); font-size: 0.95rem; max-width: 500px; margin: 0 auto; }
+        .cta-links { margin-top: 1.25rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-links a {
+            display: inline-block; padding: 0.6rem 1.25rem; border-radius: 10px;
+            font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .cta-links .primary {
+            background: var(--accent); color: #fff;
+        }
+        .cta-links .secondary {
+            background: var(--accent-glow); border: 1px solid var(--border); color: var(--accent);
+        }
+        .cta-links a:hover { transform: translateY(-1px); }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            text-align: center; color: var(--text-muted); font-size: 0.85rem;
+        }
+        footer .brand { font-weight: 600; color: var(--accent); }
+
+        @media (max-width: 640px) {
+            .hero { padding: 3rem 1.25rem 2.5rem; }
+            .hero h1 { font-size: 2rem; }
+            main { padding: 0 1.25rem 4rem; }
+            header { padding: 1rem 1.25rem; }
+            header nav { gap: 0.75rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="logo">⚜️ Vern</span>
+        <nav>
+            <a href="about.html" class="active">About</a>
+            <a href="index.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="messaging.html">Messaging</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="hero-badge">PRIVATE &amp; FAMILY-FIRST</span>
+        <h1>Meet Vern.</h1>
+        <p>A private, AI-powered family assistant that lives on your own hardware. Scheduling, meal planning, household coordination, and more — all through natural conversation via iMessage.</p>
+    </section>
+
+    <main>
+        <h2 class="section-title">What Vern Does</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">📅</div>
+                <h3>Calendar &amp; Scheduling</h3>
+                <p>Manages family calendars, coordinates schedules, and sends reminders — all through simple text messages.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🍽️</div>
+                <h3>Meal Planning &amp; Recipes</h3>
+                <p>Suggests meals based on what's in your pantry, manages shopping lists, and keeps track of family favorites.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🌤️</div>
+                <h3>Weather &amp; Briefings</h3>
+                <p>Delivers personalized weather forecasts and daily briefings tailored to each family member's schedule.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">✅</div>
+                <h3>Chores &amp; Tasks</h3>
+                <p>Assigns and tracks household chores with built-in allowance tracking for kids.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📰</div>
+                <h3>News &amp; Headlines</h3>
+                <p>Curated local and national news delivered in a family-friendly format.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💬</div>
+                <h3>Natural Conversation</h3>
+                <p>Just text Vern like you would a family member. No apps to learn, no interfaces to navigate.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Built on Three Principles</h2>
+        <div class="principles">
+            <div class="principle">
+                <div class="icon">🔒</div>
+                <h3>Privacy-First</h3>
+                <p>All data stays on your hardware. Nothing is sent to the cloud. You own everything.</p>
+            </div>
+            <div class="principle">
+                <div class="icon">👨‍👩‍👧‍👦</div>
+                <h3>Family-Centered</h3>
+                <p>Built for real families. Age-appropriate content, parental controls, and shared coordination.</p>
+            </div>
+            <div class="principle">
+                <div class="icon">🧠</div>
+                <h3>Locally Intelligent</h3>
+                <p>Runs AI models on-device. No subscriptions, no external dependencies, no data harvesting.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Questions?</h2>
+            <p>Vern is a personal project built for family use. If you've been given Vern's number, you're part of the circle.</p>
+            <div class="cta-links">
+                <a href="index.html" class="primary">Privacy Policy</a>
+                <a href="messaging.html" class="secondary">Messaging Policy</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><span class="brand">⚜️ Vern</span> — Smart Family Assistant</p>
+        <p>&copy; 2026 Vern. All rights reserved.</p>
+    </footer>
+</body>
+</html>
