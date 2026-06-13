@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vern — Privacy Policy</title>
-    <meta name="description" content="Privacy Policy for Vern Smart Family Assistant messaging services.">
+    <meta name="description" content="Privacy Policy for Vern Smart Family Assistant.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -167,16 +167,18 @@
 
     <main>
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: March 18, 2026 &nbsp;|&nbsp; Last Updated: March 18, 2026</p>
+        <p class="effective-date">Effective Date: March 18, 2026 &nbsp;|&nbsp; Last Updated: June 13, 2026</p>
 
-        <p>This Privacy Policy describes how Vern ("we," "us," or "our") collects, uses, and protects information when you interact with our family assistant messaging service.</p>
+        <p>This Privacy Policy describes how Vern ("we," "us," or "our") collects, uses, and protects information when you interact with our family assistant service through the Vern Companion iOS app, SMS, or other supported channels.</p>
 
         <h2>1. Information We Collect</h2>
-        <p>When you interact with Vern via SMS or iMessage, we may collect:</p>
+        <p>When you interact with Vern, we may collect:</p>
         <ul>
-            <li><strong>Contact Information:</strong> Your phone number, name, and communication preferences as provided by you or an authorized family administrator.</li>
-            <li><strong>Message Content:</strong> The text content of messages you send to and receive from Vern, used solely to provide the requested services (scheduling, reminders, family coordination).</li>
-            <li><strong>Usage Data:</strong> Timestamps, message frequency, and interaction patterns to maintain service quality.</li>
+            <li><strong>Account Information:</strong> Your name, email address, phone number, and family role as provided by you or an authorized family administrator during setup.</li>
+            <li><strong>Conversation Content:</strong> Messages you send to and receive from Vern through the app or SMS, used solely to provide the requested services (scheduling, reminders, family coordination).</li>
+            <li><strong>Calendar &amp; Email Data:</strong> When you connect your Google or Apple account, Vern reads your calendar events and email to coordinate schedules and surface important information for your family.</li>
+            <li><strong>Health &amp; Fitness Data:</strong> If you grant access, Vern reads Apple HealthKit data (steps, workouts, activity) to provide personalized fitness insights. Health data is processed on-device and on your home server only.</li>
+            <li><strong>Usage Data:</strong> Timestamps, interaction patterns, and feature usage to maintain service quality.</li>
         </ul>
 
         <h2>2. How We Use Your Information</h2>
@@ -193,17 +195,19 @@
         </div>
 
         <h2>3. Data Storage &amp; Security</h2>
-        <p>All data is stored locally on privately-owned hardware within the United States. We employ encryption at rest and in transit, access controls, and regular security reviews to protect your information. No data is stored on public cloud services.</p>
+        <p>Vern is a local-first system. All data is stored and processed on your privately-owned home server — not in the cloud. We employ encryption at rest (AES-256) and in transit, role-based access controls, and regular security reviews. Sensitive credentials such as API keys are stored in an encrypted vault on your server.</p>
 
         <h2>4. Data Retention</h2>
-        <p>Message content is retained for up to 90 days to provide conversation context and service continuity. You may request deletion of your data at any time by contacting the family administrator or by texting "DELETE MY DATA" to Vern.</p>
+        <p>Conversation content is retained for up to 90 days to provide context and service continuity. You may request deletion of your data at any time by contacting the family administrator or through the Vern Companion app settings.</p>
 
         <h2>5. Third-Party Services</h2>
         <p>Vern may interact with the following third-party services to fulfill requests:</p>
         <ul>
-            <li><strong>Twilio:</strong> SMS/MMS message delivery (subject to <a href="https://www.twilio.com/legal/privacy" target="_blank">Twilio's Privacy Policy</a>)</li>
-            <li><strong>Apple iMessage:</strong> Message delivery for iMessage users</li>
-            <li><strong>Weather services:</strong> To provide weather information (no personal data shared)</li>
+            <li><strong>Google OAuth:</strong> Account sign-in for calendar and email access (subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>)</li>
+            <li><strong>Apple HealthKit:</strong> On-device fitness and health data (never sent to external servers)</li>
+            <li><strong>Apple WeatherKit:</strong> Weather forecasts and conditions (no personal data shared)</li>
+            <li><strong>Cloud AI Providers (optional):</strong> If enabled by the family administrator, Vern may send conversation context to AI providers (Anthropic, Google Gemini, or OpenAI) to enhance responses. This is opt-in and disabled by default.</li>
+            <li><strong>Twilio:</strong> SMS/MMS message delivery for text-based interactions (subject to <a href="https://www.twilio.com/legal/privacy" target="_blank">Twilio's Privacy Policy</a>)</li>
         </ul>
 
         <h2>6. Your Rights</h2>
@@ -215,11 +219,11 @@
             <li><strong>Opt out</strong> of messaging at any time by texting STOP</li>
         </ul>
 
-        <h2>7. Consent to Receive Messages</h2>
-        <p>By providing your phone number to an authorized Vern family administrator, you consent to receive SMS and/or iMessage communications from Vern related to scheduling, reminders, and family coordination. Message and data rates may apply. Message frequency varies based on your interactions.</p>
+        <h2>7. Consent &amp; Communications</h2>
+        <p>By creating an account in the Vern Companion app or being added by an authorized family administrator, you consent to receive communications from Vern related to scheduling, reminders, and family coordination. These communications may be delivered through the Vern app, push notifications, or SMS. Message and data rates may apply for SMS. Message frequency varies based on your interactions.</p>
 
         <div class="highlight-box">
-            <strong>To opt out:</strong> Text <strong>STOP</strong> at any time to stop receiving messages. Text <strong>HELP</strong> for assistance.
+            <strong>To opt out of SMS:</strong> Text <strong>STOP</strong> at any time to stop receiving text messages. Text <strong>HELP</strong> for assistance. Push notifications can be managed in the app or your device settings.
         </div>
 
         <h2>8. Children's Privacy</h2>
